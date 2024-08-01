@@ -22,6 +22,7 @@ $result = mysqli_query($conn, $sql);
     <h1>Manage Categories</h1>
     <a href="add_category.php">Add Category</a>
     <a href="manage_photos.php">photo</a>
+    <a href="admin.php">Home</a>
     <a href="../logout.php">Logout</a>
     <table border="1">
         <tr>
