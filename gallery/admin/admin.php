@@ -39,7 +39,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="../dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    <img class="animation__shake" src="../dist/img/admin1.png" alt="" height="100" width="350">
   </div>
 
   <!-- Navbar -->
