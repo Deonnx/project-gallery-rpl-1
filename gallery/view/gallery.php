@@ -47,6 +47,7 @@ $result = mysqli_stmt_get_result($stmt);
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        
     $(document).ready(function(){
       // Add smooth scrolling to all links
       $("a").on('click', function(event) {
@@ -87,10 +88,7 @@ $result = mysqli_stmt_get_result($stmt);
           <div class="header-left">
             <div class="logo-thumbnail logo-custom-css">
               <a class="logo-light" href=""
-                ><img src="assets/images/logo/logo-white.png" alt="nft-logo"
-              /></a>
-              <a class="logo-dark" href="index.html"
-                ><img src="assets/images/logo/logo-dark.png" alt="nft-logo"
+                ><img src="../images/pp.jpeg" alt="" width="95px" 
               /></a>
             </div>
             <div class="mainmenu-wrapper">
@@ -210,41 +208,8 @@ $result = mysqli_stmt_get_result($stmt);
               </div>
             </div>
 
-            <div class="setting-option mobile-menu-bar d-block d-xl-none">
-              <div class="hamberger">
-                <button class="hamberger-button">
-                  <i class='bx bx-menu' ></i>
-                </button>
-              </div>
-            </div>
-
-            <div id="my_switcher" class="my_switcher setting-option">
-              <ul>
-                <li>
-                  <a
-                    href="javascript: void(0);"
-                    data-theme="light"
-                    class="setColor light"
-                  >
-                    <img
-                      class="sun-image"
-                      src="assets/images/icons/sun-01.svg"
-                      alt="Sun images"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript: void(0);"
-                    data-theme="dark"
-                    class="setColor dark"
-                  >
-                    <img
-                      class="Victor Image"
-                      src="assets/images/icons/vector.svg"
-                      alt="Vector Images"
-                    />
-                  </a>
+            
+                  
                 </li>
               </ul>
             </div>
@@ -257,149 +222,113 @@ $result = mysqli_stmt_get_result($stmt);
    
     <!-- top top-seller end -->
     <!-- Start product area -->
-    <div class="rn-product-area rn-section-gapTop" id="galery">
-      <div class="container">
-        <div class="row mb--30 align-items-center">
-          <div class="col-12">
-            <h3
-              class="title mb--0"
-              data-sal-delay="150"
-              data-sal="slide-up"
-              data-sal-duration="800"
-            >
-              GALERY XII RPL 1
-            </h3>
-          </div>
-        </div>
+   <!-- Start product area -->
+<div class="rn-product-area rn-section-gapTop" id="galery">
+  <div class="container">
+    <div class="row mb--30 align-items-center">
+      <div class="col-12">
+        <h3
+          class="title mb--0"
+          data-sal-delay="150"
+          data-sal="slide-up"
+          data-sal-duration="800"
+        >
+          GALERY XII RPL 1
+        </h3>
+      </div>
+    </div>
 
-        <div class="default-exp-wrapper">
-          <div class="inner">
-          
-          <form method="get" action="gallery.php">
-        Filter by Category: 
-        <select name="category_id">
+    <!-- Filter form -->
+    <div class="default-exp-wrapper">
+      <div class="inner">
+        <form method="get" action="gallery.php">
+          <label for="category_id">Filter by Category:</label>
+          <select name="category_id" id="category_id">
             <option value="0">All</option>
-            <?php while($row = mysqli_fetch_assoc($categories)): ?>
-                <option value="<?php echo $row['id']; ?>" <?php if ($row['id'] == $category_id) echo 'selected'; ?>><?php echo $row['name']; ?></option>
+            <?php while ($row = mysqli_fetch_assoc($categories)): ?>
+              <option value="<?php echo $row['id']; ?>" <?php if ($row['id'] == $category_id) echo 'selected'; ?>>
+                <?php echo $row['name']; ?>
+              </option>
             <?php endwhile; ?>
-        </select>
-        <input type="submit" value="Filter">
-    </form>
+          </select>
+          <input type="submit" value="Filter">
+        </form>
+      </div>
+    </div>
 
-           
-              </div>
+    <!-- Gallery items -->
+    <div class="row g-5 mt_dec--30">
+      <?php while ($photo = mysqli_fetch_assoc($result)): ?>
+        <div
+          class="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+          data-sal="slide-up"
+          data-sal-delay="150"
+          data-sal-duration="800"
+        >
+          <div class="product-style-one no-overlay with-placeBid">
+            <div class="card-thumbnail">
+             
+              <a href="product-details.html" class="btn btn-primary">Place Bid</a>
             </div>
-          </div>
-        </div>
-
-        <div class="row g-5 mt_dec--30">
-          <!-- start single product -->
-          <div
-            class="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
-            data-sal="slide-up"
-            data-sal-delay="150"
-            data-sal-duration="800"
-          >
-            <div class="product-style-one no-overlay with-placeBid">
-              <div class="card-thumbnail">
-                <a href="product-details.html">
-                  <img
-                    src="assets/images/portfolio/WhatsApp Image 2023-11-01 at 11.10.45.jpeg"
-                    alt="NFT_portfolio"
-                  />
-                </a>
-                <a href="product-details.html" class="btn btn-primary"
-                  >Place Bid</a
+            <div class="product-share-wrapper">
+              <div class="share-btn share-btn-activation dropdown">
+                <button
+                  class="icon"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
-              </div>
-              <div class="product-share-wrapper">
-                <!-- <div class="profile-share">
-                  <a
-                    href="author.html"
-                    class="avatar"
-                    data-tooltip="Owener:Mr.Jone-lee"
-                    ><img
-                      src="assets/images/client/client-2.png"
-                      alt="Nft_Profile"
-                  /></a>
-                  <a
-                    href="author.html"
-                    class="avatar"
-                    data-tooltip="Owener:Mr.Jone-lee"
-                    ><img
-                      src="assets/images/client/client-3.png"
-                      alt="Nft_Profile"
-                  /></a>
-                  <a
-                    href="author.html"
-                    class="avatar"
-                    data-tooltip="Owener:Mr.Jone-lee"
-                    ><img
-                      src="assets/images/client/client-4.png"
-                      alt="Nft_Profile"
-                  /></a>
-                  <a class="more-author-text" href="#">9+ Place Bit.</a>
-                </div> -->
-                <div class="share-btn share-btn-activation dropdown">
+                  <svg
+                    viewBox="0 0 14 4"
+                    fill="none"
+                    width="16"
+                    height="16"
+                    class="sc-bdnxRM sc-hKFxyN hOiKLt"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="share-btn-setting dropdown-menu dropdown-menu-end">
                   <button
-                    class="icon"
                     type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    class="btn-setting-text share-text"
+                    data-bs-toggle="modal"
+                    data-bs-target="#shareModal"
                   >
-                    <svg
-                      viewBox="0 0 14 4"
-                      fill="none"
-                      width="16"
-                      height="16"
-                      class="sc-bdnxRM sc-hKFxyN hOiKLt"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M3.5 2C3.5 2.82843 2.82843 3.5 2 3.5C1.17157 3.5 0.5 2.82843 0.5 2C0.5 1.17157 1.17157 0.5 2 0.5C2.82843 0.5 3.5 1.17157 3.5 2ZM8.5 2C8.5 2.82843 7.82843 3.5 7 3.5C6.17157 3.5 5.5 2.82843 5.5 2C5.5 1.17157 6.17157 0.5 7 0.5C7.82843 0.5 8.5 1.17157 8.5 2ZM11.999 3.5C12.8274 3.5 13.499 2.82843 13.499 2C13.499 1.17157 12.8274 0.5 11.999 0.5C11.1706 0.5 10.499 1.17157 10.499 2C10.499 2.82843 11.1706 3.5 11.999 3.5Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
+                    Share
                   </button>
-
-                  <div
-                    class="share-btn-setting dropdown-menu dropdown-menu-end"
+                  <button
+                    type="button"
+                    class="btn-setting-text report-text"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reportModal"
                   >
-                    <button
-                      type="button"
-                      class="btn-setting-text share-text"
-                      data-bs-toggle="modal"
-                      data-bs-target="#shareModal"
-                    >
-                      Share
-                    </button>
-                    <button
-                      type="button"
-                      class="btn-setting-text report-text"
-                      data-bs-toggle="modal"
-                      data-bs-target="#reportModal"
-                    >
-                      Report
-                    </button>
-                  </div>
+                    Report
+                  </button>
                 </div>
               </div>
-              <div class="gallery">
-        <?php while($photo = mysqli_fetch_assoc($result)): ?>
-            <div class="photo">
+            </div>
+            <div class="gallery">
+              <div class="photo">
                 <img src="<?php echo $photo['file_path']; ?>" alt="<?php echo $photo['title']; ?>">
                 <p><?php echo $photo['title']; ?></p>
                 <p><?php echo $photo['description']; ?></p>
+              </div>
             </div>
-        <?php endwhile; ?>
-    </div>
           </div>
-          <!-- end single product -->
-          
         </div>
-      </div>
+      <?php endwhile; ?>
     </div>
+  </div>
+</div>
+<!-- End product area -->
+
+
     <!-- end product area -->
     <!-- start service area -->
     <div class="rn-service-area rn-section-gapTop" id="about">
@@ -427,14 +356,13 @@ $result = mysqli_stmt_get_result($stmt);
             >
               <div class="inner">
                 <div class="icon">
-                  <img src="assets/images/icons/shape-7.png" alt="Shape" />
+                  <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-                <div class="subtitle">Step-01</div>
+               
                 <div class="content">
-                  <h4 class="title"><a href="#">Set up your wallet</a></h4>
+                  <h4 class="title"><a href="#">ANGKATAN</a></h4>
                   <p class="description">
-                    Powerful features and inclusions, which makes Nuron
-                    standout, easily customizable and scalable.
+                    2022-2025
                   </p>
                   <a class="read-more-button" href="#"
                     ><i class="feather-arrow-right"></i
@@ -455,14 +383,13 @@ $result = mysqli_stmt_get_result($stmt);
             >
               <div class="inner">
                 <div class="icon">
-                  <img src="assets/images/icons/shape-1.png" alt="Shape" />
+                <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-                <div class="subtitle">Step-02</div>
+               
                 <div class="content">
-                  <h4 class="title"><a href="#">Create your collection</a></h4>
+                  <h4 class="title"><a href="#">WALI KELAS</a></h4>
                   <p class="description">
-                    A great collection of beautiful website templates for your
-                    need. Choose the best suitable template.
+                   ANDIES PRAMUDIYANTARA S.KOM
                   </p>
                   <a class="read-more-button" href="#"
                     ><i class="feather-arrow-right"></i
@@ -483,14 +410,13 @@ $result = mysqli_stmt_get_result($stmt);
             >
               <div class="inner">
                 <div class="icon">
-                  <img src="assets/images/icons/shape-5.png" alt="Shape" />
+                <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-                <div class="subtitle">Step-03</div>
+                
                 <div class="content">
-                  <h4 class="title"><a href="#">Add your NFT's</a></h4>
+                  <h4 class="title"><a href="#">KETUA KELAS</a></h4>
                   <p class="description">
-                    We've made the template fully responsive, so it looks great
-                    on all devices: desktop, tablets and.
+                    VERY YUASDI AKBAR
                   </p>
                   <a class="read-more-button" href="#"
                     ><i class="feather-arrow-right"></i
@@ -511,14 +437,13 @@ $result = mysqli_stmt_get_result($stmt);
             >
               <div class="inner">
                 <div class="icon">
-                  <img src="assets/images/icons/shape-6.png" alt="Shape" />
+                <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-                <div class="subtitle">Step-04</div>
+               
                 <div class="content">
-                  <h4 class="title"><a href="#">Sell Your NFT's</a></h4>
+                  <h4 class="title"><a href="#">SISWA SISWI BERPRESTASI</a></h4>
                   <p class="description">
-                    I throw myself down among the tall grass by the stream as I
-                    lie close to the earth NFT's.
+                   ARDYNA ANGGRAENI FAARDIVO MAWARDHIEN
                   </p>
                   <a class="read-more-button" href="#"
                     ><i class="feather-arrow-right"></i
