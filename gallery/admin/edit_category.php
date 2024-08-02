@@ -7,23 +7,17 @@ if ($_SESSION['role'] !== 'admin') {
     exit;
 }
 
-$id = $_GET['id'];
-$sql = "SELECT * FROM categories WHERE id = ?";
-$stmt = mysqli_prepare($conn, $sql);
-mysqli_stmt_bind_param($stmt, "i", $id);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
-$category = mysqli_fetch_assoc($result);
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_POST['id'];
     $name = $_POST['name'];
     $sql = "UPDATE categories SET name = ? WHERE id = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "si", $name, $id);
     mysqli_stmt_execute($stmt);
-    header("Location: manage_categories.php");
+    echo "Category updated successfully.";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>

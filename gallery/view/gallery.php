@@ -34,7 +34,7 @@ $result = mysqli_stmt_get_result($stmt);
       type="image/x-icon"
       href="assets/images/favicon.png"
     />
-    <!-- CSS 
+    <!-- CSS
     ============================================ -->
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/css/vendor/slick.css" />
@@ -47,25 +47,25 @@ $result = mysqli_stmt_get_result($stmt);
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        
+
     $(document).ready(function(){
       // Add smooth scrolling to all links
       $("a").on('click', function(event) {
-    
+
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
           // Prevent default anchor click behavior
           event.preventDefault();
-    
+
           // Store hash
           var hash = this.hash;
-    
+
           // Using jQuery's animate() method to add smooth page scroll
           // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
           $('html, body').animate({
             scrollTop: $(hash).offset().top
           }, 800, function(){
-       
+
             // Add hash (#) to URL when done scrolling (default click behavior)
             window.location.hash = hash;
           });
@@ -77,6 +77,9 @@ $result = mysqli_stmt_get_result($stmt);
     <!-- Style css -->
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
+  <style>
+
+    </style>
 
   <body class="template-color-1 with-particles">
     <div id="particles-js"></div>
@@ -88,7 +91,7 @@ $result = mysqli_stmt_get_result($stmt);
           <div class="header-left">
             <div class="logo-thumbnail logo-custom-css">
               <a class="logo-light" href=""
-                ><img src="../images/pp.jpeg" alt="" width="95px" 
+                ><img src="../images/pp.jpeg" alt="" width="95px"
               /></a>
             </div>
             <div class="mainmenu-wrapper">
@@ -99,13 +102,13 @@ $result = mysqli_stmt_get_result($stmt);
                     <a href="#galery">Home</a>
                   </li>
                   <li><a href="#about">About Us!</a></li>
-                  
+
                 <!-- End Mainmanu Nav -->
               </nav>
             </div>
           </div>
           <div class="header-right">
-            
+
             <div class="setting-option rn-icon-list d-block d-lg-none">
               <div class="icon-box search-mobile-icon">
                 <button><i class='bx bx-search-alt-2' ></i></button>
@@ -133,14 +136,14 @@ $result = mysqli_stmt_get_result($stmt);
                 <a
                   id="connectbtn"
                   class="btn btn-primary-alta btn-small"
-                  href="index_admin.html"
+                  href="../view/login.php"
                   >Login Admin</a
                 >
               </div>
             </div>
 
             <div class="setting-option rn-icon-list notification-badge">
-             
+
             </div>
 
             <div class="header_admin" id="header_admin">
@@ -208,8 +211,8 @@ $result = mysqli_stmt_get_result($stmt);
               </div>
             </div>
 
-            
-                  
+
+
                 </li>
               </ul>
             </div>
@@ -219,7 +222,7 @@ $result = mysqli_stmt_get_result($stmt);
     </header>
     <!-- End Header Area -->
 
-   
+
     <!-- top top-seller end -->
     <!-- Start product area -->
    <!-- Start product area -->
@@ -240,21 +243,22 @@ $result = mysqli_stmt_get_result($stmt);
 
     <!-- Filter form -->
     <div class="default-exp-wrapper">
-      <div class="inner">
+    <div class="inner">
         <form method="get" action="gallery.php">
-          <label for="category_id">Filter by Category:</label>
-          <select name="category_id" id="category_id">
-            <option value="0">All</option>
-            <?php while ($row = mysqli_fetch_assoc($categories)): ?>
-              <option value="<?php echo $row['id']; ?>" <?php if ($row['id'] == $category_id) echo 'selected'; ?>>
-                <?php echo $row['name']; ?>
-              </option>
-            <?php endwhile; ?>
-          </select>
-          <input type="submit" value="Filter">
+            <label for="category_id">Sort By:</label>
+            <select name="category_id" id="category_id">
+                <option value="0">All</option>
+                <?php while ($row = mysqli_fetch_assoc($categories)): ?>
+                    <option value="<?php echo $row['id']; ?>" <?php if ($row['id'] == $category_id) echo 'selected'; ?>>
+                        <?php echo $row['name']; ?>
+                    </option>
+                <?php endwhile; ?>
+            </select>
+            <input type="submit" class="btn-filter" value="Filter">
         </form>
-      </div>
     </div>
+</div>
+
 
     <!-- Gallery items -->
     <div class="row g-5 mt_dec--30">
@@ -267,7 +271,7 @@ $result = mysqli_stmt_get_result($stmt);
         >
           <div class="product-style-one no-overlay with-placeBid">
             <div class="card-thumbnail">
-             
+
               <a href="product-details.html" class="btn btn-primary">Place Bid</a>
             </div>
             <div class="product-share-wrapper">
@@ -358,7 +362,7 @@ $result = mysqli_stmt_get_result($stmt);
                 <div class="icon">
                   <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-               
+
                 <div class="content">
                   <h4 class="title"><a href="#">ANGKATAN</a></h4>
                   <p class="description">
@@ -385,7 +389,7 @@ $result = mysqli_stmt_get_result($stmt);
                 <div class="icon">
                 <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-               
+
                 <div class="content">
                   <h4 class="title"><a href="#">WALI KELAS</a></h4>
                   <p class="description">
@@ -412,7 +416,7 @@ $result = mysqli_stmt_get_result($stmt);
                 <div class="icon">
                 <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-                
+
                 <div class="content">
                   <h4 class="title"><a href="#">KETUA KELAS</a></h4>
                   <p class="description">
@@ -439,7 +443,7 @@ $result = mysqli_stmt_get_result($stmt);
                 <div class="icon">
                 <img src="../images/pp.jpeg" alt="" width="100px" />
                 </div>
-               
+
                 <div class="content">
                   <h4 class="title"><a href="#">SISWA SISWI BERPRESTASI</a></h4>
                   <p class="description">
@@ -457,7 +461,7 @@ $result = mysqli_stmt_get_result($stmt);
         </div>
       </div>
     </div>
-    
+
     <!-- End Footer Area -->
     <div class="mouse-cursor cursor-outer"></div>
     <div class="mouse-cursor cursor-inner"></div>
@@ -503,126 +507,111 @@ $result = mysqli_stmt_get_result($stmt);
     <script src="../assets/js/vendor/maralis.js"></script>
     <script src="../assets/js/vendor/nft.js"></script>
     <script>
-      particlesJS(
-        "particles-js",
 
-        {
-          particles: {
+    particlesJS("particles-js", {
+        particles: {
             number: {
-              value: 40,
-              density: {
-                enable: true,
-                value_area: 1000,
-              },
+                value: 50,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
             },
             color: {
-              value: ["#7FC7BD", "#ffE7BD"],
+                value: "#ffffff"
             },
             shape: {
-              type: "circle",
-              stroke: {
-                width: 0,
-                color: "#000000",
-              },
-              polygon: {
-                nb_sides: 4,
-              },
-              image: {
-                src: "img/github.svg",
-                width: 100,
-                height: 100,
-              },
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#000000"
+                },
+                polygon: {
+                    nb_sides: 5
+                }
             },
             opacity: {
-              value: 0.8,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 1,
-                opacity_min: 0.1,
-                sync: false,
-              },
+                value: 0.5,
+                random: false,
+                anim: {
+                    enable: false,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
             },
             size: {
-              value: 3,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 40,
-                size_min: 0.08,
-                sync: false,
-              },
+                value: 3,
+                random: true,
+                anim: {
+                    enable: false,
+                    speed: 40,
+                    size_min: 0.1,
+                    sync: false
+                }
             },
             line_linked: {
-              enable: false,
-              distance: 150,
-              color: "#ffffff",
-              opacity: 0.4,
-              width: 1,
+                enable: true,
+                distance: 150,
+                color: "#ffffff",
+                opacity: 0.4,
+                width: 1
             },
             move: {
-              enable: true,
-              speed: 4,
-              direction: "none",
-              random: false,
-              straight: false,
-              out_mode: "out",
-              attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200,
-              },
-            },
-          },
-          interactivity: {
+                enable: true,
+                speed: 3,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
             detect_on: "canvas",
             events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
-              },
-              onclick: {
-                enable: true,
-                mode: "push",
-              },
-              resize: true,
+                onhover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                },
+                resize: true
             },
             modes: {
-              grab: {
-                distance: 400,
-                line_linked: {
-                  opacity: 1,
+                grab: {
+                    distance: 400,
+                    line_linked: {
+                        opacity: 1
+                    }
                 },
-              },
-              bubble: {
-                distance: 800,
-                size: 40,
-                duration: 2,
-                opacity: 8,
-                speed: 3,
-              },
-              repulse: {
-                distance: 200,
-              },
-              push: {
-                particles_nb: 4,
-              },
-              remove: {
-                particles_nb: 2,
-              },
-            },
-          },
-          retina_detect: true,
-          config_demo: {
-            hide_card: false,
-            background_color: "#b61924",
-            background_image: "",
-            background_position: "50% 50%",
-            background_repeat: "no-repeat",
-            background_size: "cover",
-          },
-        }
-      );
+                bubble: {
+                    distance: 800,
+                    size: 40,
+                    duration: 2,
+                    opacity: 8,
+                    speed: 3
+                },
+                repulse: {
+                    distance: 200
+                },
+                push: {
+                    particles_nb: 4
+                },
+                remove: {
+                    particles_nb: 2
+                }
+            }
+        },
+        retina_detect: true
+    });
+
     </script>
   </body>
 </html>
